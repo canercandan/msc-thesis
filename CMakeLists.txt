@@ -1,6 +1,6 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
 
-PROJECT(latex_model NONE)
+PROJECT(msc_thesis NONE)
 
 SET(LATEX_COMPILER_FLAGS "-interaction=nonstopmode --enable-write18" CACHE STRING "Flags passed to latex.")
 
