@@ -8,17 +8,28 @@
 % Authors:
 % Caner Candan <caner@candan.fr>, http://caner.candan.fr
 
+% for multilanguages support
+\newif\if@en            \@enfalse
+\newif\if@fr            \@frfalse
+\newif\if@de            \@defalse
+
 \newif\if@algo          \@algofalse
 \newif\if@uml           \@umlfalse
 \newif\if@french        \@frenchfalse
 \newif\if@url           \@urlfalse
 \newif\if@dot           \@dotfalse
 
+% for multilanguages support
+\DeclareOption{en}{\@entrue}
+\DeclareOption{fr}{\@frtrue}
+\DeclareOption{de}{\@detrue}
+
 \DeclareOption{algo}{\@algotrue}
 \DeclareOption{uml}{\@umltrue}
 \DeclareOption{french}{\@frenchtrue}
 \DeclareOption{url}{\@urltrue}
 \DeclareOption{dot}{\@dottrue}
+
 \ProcessOptions
 
 \if@dot
@@ -64,6 +75,15 @@
 
 \pagestyle{headings}
 \geometry{dvips,a4paper,margin=1.0in,left=1.8cm,right=1.8cm,top=1.8cm,bottom=3cm}
+
+% multilanguages support
+
+\newcommand{\lang}[3]
+{
+  \if@en #1 \fi
+  \if@fr #2 \fi
+  \if@de #3 \fi
+}
 
 \author{Caner Candan - \emph{caner@candan.fr}}
 
