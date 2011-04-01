@@ -8,6 +8,12 @@
 % Authors:
 % Caner Candan <caner@candan.fr>, http://caner.candan.fr
 
+
+% for multilanguages support
+\newif\if@en            \@enfalse
+\newif\if@fr            \@frfalse
+\newif\if@de            \@defalse
+
 \newif\if@algo          \@algofalse
 \newif\if@uml           \@umlfalse
 \newif\if@french        \@frenchfalse
@@ -15,12 +21,19 @@
 \newif\if@dot           \@dotfalse
 \newif\if@color         \@colorfalse
 
+
+% for multilanguages support
+\DeclareOption{en}{\@entrue}
+\DeclareOption{fr}{\@frtrue}
+\DeclareOption{de}{\@detrue}
+
 \DeclareOption{algo}{\@algotrue}
 \DeclareOption{uml}{\@umltrue}
 \DeclareOption{french}{\@frenchtrue}
 \DeclareOption{url}{\@urltrue}
 \DeclareOption{dot}{\@dottrue}
 \DeclareOption{color}{\@colortrue}
+
 \ProcessOptions
 
 \if@color
@@ -58,6 +71,15 @@
 
 \RequirePackage{subfigure}
 \RequirePackage{caption}
+
+% multilanguages support
+
+\newcommand{\lang}[2]
+{
+  \if@en #1 \fi
+  \if@fr #2 \fi
+  %\if@de #3 \fi
+}
 
 \author{
   \underline{Caner Candan}\\
