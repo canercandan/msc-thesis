@@ -11,7 +11,11 @@
 \usetheme{Warsaw}
 %\usetheme{Pittsburgh}
 
+\lang{
 \title[Subtitle]{Title}
+}{
+\title[Soustitre]{Titre}
+}
 
 \begin{document}
 
@@ -19,27 +23,27 @@
   \titlepage
 \end{frame}
 
-\begin{frame}{First frame}
+\begin{frame}{\lang{First frame}{Premier slide}}
   \begin{itemize}
-  \item One thing
-  \item Another one
+  \item \lang{One thing}{Une chose}
+  \item \lang{Another one}{Une autre chose}
   \end{itemize}
   \begin{figure}[h]
     \centering
     %\includegraphics[scale=0.5]{images/Apicture}
-    \caption{A picture's caption}
+    \caption{\lang{A picture's caption}{L'intitulé d'une image}}
   \end{figure}
 \end{frame}
 
-\begin{frame}{Another frame}
-  Some text to describe something:
+\begin{frame}{\lang{Another frame}{Un autre slide}}
+  \lang{Some text to describe something:}{Un peu de texte pour décrire quelque chose:}
   \vspace{0.5cm}
   \begin{columns}[c]
     \column{1.0in}
     \begin{itemize}
-    \item First option
-    \item Another one
-    \item And a last one
+    \item \lang{First option}{Première option}
+    \item \lang{Another one}{Une autre option}
+    \item \lang{And a last one}{Et une dernière}
     \end{itemize}
     \column{2in}
     \framebox{
@@ -48,10 +52,10 @@
   \end{columns}
 \end{frame}
 
-\begin{frame}{Any questions ?}
+\begin{frame}{\lang{Any questions ?}{Des questions ?}}
 
   \begin{center}
-    Thank you.\\
+    \lang{Thank you}{Merci}.\\
     {\bf caner@candan.fr}
   \end{center}
 
