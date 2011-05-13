@@ -127,6 +127,17 @@ A l'aide du framework EO, il devient possible de concevoir facilement et intuiti
 \section{Divide-and-Evolve en parallèle: expérimentation avec OpenMP dans un environnement multi-coeurs}
 }
 
+
+\section{Parallelization and Scalability}
+
+In order to speedup the parallelization, we have to be care about the scalability of the framework. Indeed for small population sizes the work (efficiency) of the processors is roughly closed to 100\% but for sizes bigger than 100 individuals we observe a speed down of this processors' work. Usually, and using a data parallelization paradigm, the reason why the framework is not scalable is due to memory allocations. One solution which solves this issue is to remove or replace all calls to the functions affecting the memory capacity of the main parents and offspring vectors (swap, ...).
+
+\paragraph{Incremental memory allocation issue}
+
+As we are working in a parallel version of EO as well as minimizing the time consuming, we have found this issue doing incremental allocations in the variation operator's classes.
+
+\paragraph{
+
 \section{Conclusion}
 
 \end{document}
