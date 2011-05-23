@@ -8,6 +8,15 @@
 % Authors:
 % Caner Candan <caner@candan.fr>, http://caner.candan.fr
 
+\newcommand {\copyleft}
+{%
+  \lang{%
+    Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License". The sources may be freely downloaded, used and modified from the url {\tt https://github.com/canercandan/msc-thesis}.%
+  }{%
+    Ce papier suit les termes de la licence ``GNU Free Documentation License 1.3'' et peut être librement téléchargé, utilisé et modifié depuis l'url {\tt https://github.com/canercandan/msc-thesis}.%
+  }%
+}
+
 \newcommand {\thales}   {{\tt Thales Research \& Technology}}
 
 \title{%
@@ -16,11 +25,7 @@
   }{%
     {\bf Optimisations basées sur des algorithmes stochastiques\\et calcul à haute performance}\\{\em Mémoire pour l'obtention du titre de Master}%
   }%
-  \lang{%
-    \footnote{Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License". The sources may be freely downloaded, used and modified from the url {\tt https://github.com/canercandan/msc-thesis}.}%
-  }{%
-    \footnote{Ce papier suit les termes de la licence ``GNU Free Documentation License 1.3'' et peut être librement téléchargé, utilisé et modifié depuis l'url {\tt https://github.com/canercandan/msc-thesis}.}%
-  }%
+  \footnote{\copyleft}
 }
 
 \begin{document}
@@ -29,20 +34,7 @@
 
 \begin{abstract}
 
-\lang{
-  This thesis was written in order to illustrate the projects that I have worked on during my research internship at \thales. During all the journay, various knowledges were used in various projects.
-
-% décrire l'entreprise et le laboratoire
-% décrire son métier
-% fixer les objectifs
-% introduire les projets abordés
-% appréciation des encadrants
-
-}{
-  Cette thèse a été écrit afin de présenter les projets sur lesquels j'ai travaillé durant mon stage de recherche à \thales. Durant toute la période de stage, des connaissances variées ont été utilisées dans des projets variés.
-}
-
-% something to say...
+  Written during my internship at \thales, this thesis illustrates the following topics: Parallelization of a planning algorithm using EO framework on a 48-core machine, experiments showed significant speedups with an increasing number of cores – Hybridation of EDA \& SA – Implementation of an automated parameter setting interface.
 
 \end{abstract}
 
