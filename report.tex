@@ -38,11 +38,11 @@
 
 \end{abstract}
 
-\newpage
+%\newpage
 
-\tableofcontents
+%\tableofcontents
 
-\newpage
+%\newpage
 
 \section{\lang{Aknowledgement}{Remerciements}}
 
@@ -52,7 +52,7 @@
   Je ne pourrais commençais la rédaction de ce mémoire sans remercier sincèrement toutes les personnes qui m'ont aidées de près ou de loin durant cette expérience extrêmement riche.
 }
 
-\newpage
+%\newpage
 
 \section{\lang{Evolutionary algorithms}{Les algorithmes évolutionnistes}}
 
@@ -65,6 +65,11 @@
 }{
   Les algorithmes évolutionnistes forment une famille d'algorithmes. Inspirés par la théorie de l'évolution, ils résouent une variété de problèmes. Ils font évoluer un ensemble de solutions pour un problème donné afin d'obtenir les meilleurs résultats. Leur particularité stochastique est dû à l'utilisation, itératif, de processus aléatoires. Aussi connu sous le nom de ``métaheuristiques'', la grande majorité de ces méthodes sont utilisées pour résoudre des problèmes d'optimisation. Ils sont classés parmi les méthodes d'intelligence informatiques, un domaine proche de l'intelligence artificielle.
 }
+
+\section{\lang{High performance computing}{Calcul haute performance}}
+
+Since the emergence of processors, the manufactors produce more and more faster architectures in increasing the clock rate. Thereby the performances of programs are enhanced without needing any modifications. Defined by the Moore law, this method had to normaly persist to 2015. But in increasing the clock rate it also increases the head disspation. In 2004 was the year of an important failover. We were progressively switching to processors with several computational cores and the developers were facing a new conception way: close-to-metal.
+
 
 \section{\lang{Evolving Objects Framework}{Le framework EO}}
 
@@ -88,7 +93,9 @@
 
 \section{Parallelization and Scalability}
 
-In order to speedup the parallelization, we have to be care about the scalability of the framework. Indeed for small population sizes the work (efficiency) of the processors is roughly closed to 100\% but for sizes bigger than 100 individuals we observe a speed down of this processors' work. Usually, and using a data parallelization paradigm, the reason why the framework is not scalable is due to memory allocations. One solution which solves this issue is to remove or replace all calls to the functions affecting the memory capacity of the main parents and offspring vectors (swap, ...).
+In order to speedup the parallelization, we had to be care about the scalability of the framework. Indeed for small population sizes the work (efficiency) of the processors is roughly closed to 100\% but for sizes bigger than 100 individuals we observe a speed down of this processors' work. Usually, and using a data parallelization paradigm, the reason why the framework is not scalable is due to memory allocations not under control. One solution which solves this issue was to remove or replace all calls to the functions affecting the memory capacity of the main parents and offspring vectors (swap, ...).
+
+
 
 \paragraph{Incremental memory allocation issue}
 
