@@ -13,6 +13,11 @@
 \newif\if@fr            \@frfalse
 \newif\if@de            \@defalse
 
+% for multicontexts support
+\newif\if@sci           \@scifalse
+\newif\if@eng           \@engfalse
+
+% others
 \newif\if@algo          \@algofalse
 \newif\if@uml           \@umlfalse
 \newif\if@french        \@frenchfalse
@@ -24,6 +29,11 @@
 \DeclareOption{fr}{\@frtrue}
 \DeclareOption{de}{\@detrue}
 
+% for multicontexts support
+\DeclareOption{sci}{\@scitrue}
+\DeclareOption{eng}{\@engtrue}
+
+% others
 \DeclareOption{algo}{\@algotrue}
 \DeclareOption{uml}{\@umltrue}
 \DeclareOption{french}{\@frenchtrue}
@@ -82,7 +92,13 @@
 {%
   \if@en #1 \fi%
   \if@fr #2 \fi%
-  %\if@de #3 \fi%
+}
+
+% multicontexts support
+\newcommand{\context}[2]
+{%
+  \if@sci#1\fi%
+  \if@eng#2\fi%
 }
 
 \author{Caner Candan - \emph{caner@candan.fr}

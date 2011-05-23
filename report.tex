@@ -11,16 +11,16 @@
 \newcommand {\thales}   {{\tt Thales Research \& Technology}}
 
 \title{%
-\lang{%
-{\bf Optimizations using stockastic algorithms\\and high performance computing}\\{\em MSc Thesis}%
-}{%
-{\bf Optimisations basées sur des algorithmes stochastiques\\et calcul à haute performance}\\{\em Mémoire pour l'obtention du titre de Master}%
-}%
-\lang{%
-\footnote{Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License". The sources may be freely downloaded, used and modified from the url {\tt https://github.com/canercandan/msc-thesis}.}%
-}{%
-\footnote{Ce papier suit les termes de la licence ``GNU Free Documentation License 1.3'' et peut être librement téléchargé, utilisé et modifié depuis l'url {\tt https://github.com/canercandan/msc-thesis}.}%
-}%
+  \lang{%
+    {\bf Optimizations using stockastic algorithms\\and high performance computing}\\{\em MSc Thesis}%
+  }{%
+    {\bf Optimisations basées sur des algorithmes stochastiques\\et calcul à haute performance}\\{\em Mémoire pour l'obtention du titre de Master}%
+  }%
+  \lang{%
+    \footnote{Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.3 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts. A copy of the license is included in the section entitled "GNU Free Documentation License". The sources may be freely downloaded, used and modified from the url {\tt https://github.com/canercandan/msc-thesis}.}%
+  }{%
+    \footnote{Ce papier suit les termes de la licence ``GNU Free Documentation License 1.3'' et peut être librement téléchargé, utilisé et modifié depuis l'url {\tt https://github.com/canercandan/msc-thesis}.}%
+  }%
 }
 
 \begin{document}
@@ -30,7 +30,7 @@
 \begin{abstract}
 
 \lang{
-This thesis was written in order to illustrate the projects that I have worked on during my research internship at \thales. During all the journay, various knowledges were used in various projects.
+  This thesis was written in order to illustrate the projects that I have worked on during my research internship at \thales. During all the journay, various knowledges were used in various projects.
 
 % décrire l'entreprise et le laboratoire
 % décrire son métier
@@ -39,7 +39,7 @@ This thesis was written in order to illustrate the projects that I have worked o
 % appréciation des encadrants
 
 }{
-Cette thèse a été écrit afin de présenter les projets sur lesquels j'ai travaillé durant mon stage de recherche à \thales. Durant toute la période de stage, des connaissances variées ont été utilisées dans des projets variés.
+  Cette thèse a été écrit afin de présenter les projets sur lesquels j'ai travaillé durant mon stage de recherche à \thales. Durant toute la période de stage, des connaissances variées ont été utilisées dans des projets variés.
 }
 
 % something to say...
@@ -52,81 +52,47 @@ Cette thèse a été écrit afin de présenter les projets sur lesquels j'ai tra
 
 \newpage
 
-\lang{
-\section{Aknowledgement}
-}{
-\section{Remerciements}
-}
+\section{\lang{Aknowledgement}{Remerciements}}
 
 \lang{
-I cannot begin writting this thesis without sincerely thanking all who have helped as much as they could while this extremely rich experience.
+  I cannot begin writting this thesis without sincerely thanking all who have helped as much as they could while this extremely rich experience.
 }{
-Je ne pourrais commençais la rédaction de ce mémoire sans remercier sincèrement toutes les personnes qui m'ont aidées de près ou de loin durant cette expérience extrêmement riche.
+  Je ne pourrais commençais la rédaction de ce mémoire sans remercier sincèrement toutes les personnes qui m'ont aidées de près ou de loin durant cette expérience extrêmement riche.
 }
 
 \newpage
 
-\lang{
-\section{Evolutionary algorithms}
-}{
-\section{Les algorithmes évolutionnistes}
-}
+\section{\lang{Evolutionary algorithms}{Les algorithmes évolutionnistes}}
 
 \lang{
-Ranked among computational intelligence methods, a domain close to artificial intelligence, the evolutionary algorithms are mainly inspired by the theory of evolution.
-In order to produce the best results to a given problem, they evolve a set of solutions.
-% introduce notion of local and global optimum
-There stochastic nature is due to the iteratively use of random processes.
-Also known as ``metaheuristics'', the vast majority of these methods are used to solve optimization problems.
+  Ranked among computational intelligence methods, a domain close to artificial intelligence, the evolutionary algorithms are mainly inspired by the theory of evolution.
+  In order to produce the best results to a given problem, they evolve a set of solutions.
+  % introduce notion of local and global optimum
+  There stochastic nature is due to the iteratively use of random processes.
+  Also known as ``metaheuristics'', the vast majority of these methods are used to solve optimization problems.
 }{
-Les algorithmes évolutionnistes forment une famille d'algorithmes. Inspirés par la théorie de l'évolution, ils résouent une variété de problèmes. Ils font évoluer un ensemble de solutions pour un problème donné afin d'obtenir les meilleurs résultats. Leur particularité stochastique est dû à l'utilisation, itératif, de processus aléatoires. Aussi connu sous le nom de ``métaheuristiques'', la grande majorité de ces méthodes sont utilisées pour résoudre des problèmes d'optimisation. Ils sont classés parmi les méthodes d'intelligence informatiques, un domaine proche de l'intelligence artificielle.
+  Les algorithmes évolutionnistes forment une famille d'algorithmes. Inspirés par la théorie de l'évolution, ils résouent une variété de problèmes. Ils font évoluer un ensemble de solutions pour un problème donné afin d'obtenir les meilleurs résultats. Leur particularité stochastique est dû à l'utilisation, itératif, de processus aléatoires. Aussi connu sous le nom de ``métaheuristiques'', la grande majorité de ces méthodes sont utilisées pour résoudre des problèmes d'optimisation. Ils sont classés parmi les méthodes d'intelligence informatiques, un domaine proche de l'intelligence artificielle.
 }
 
-\lang{
-\section{Evolving Objects Framework}
-}{
-\section{Le framework EO}
-}
+\section{\lang{Evolving Objects Framework}{Le framework EO}}
 
 \lang{
-With the help of EO, you can easily design evolutionary algorithms that will find solutions to virtually all kind of hard optimization problems, from continuous to combinatorial ones.
+  With the help of EO, you can easily design evolutionary algorithms that will find solutions to virtually all kind of hard optimization problems, from continuous to combinatorial ones.
 }{
-A l'aide du framework EO, il devient possible de concevoir facilement et intuitivement des algorithmes évolutionnistes qui trouveront des solutions à tous les genres de problème virtuel en optimisation difficile allant de l'optimisation continue au combinatoire.
+  A l'aide du framework EO, il devient possible de concevoir facilement et intuitivement des algorithmes évolutionnistes qui trouveront des solutions à tous les genres de problème virtuel en optimisation difficile allant de l'optimisation continue au combinatoire.
 }
 
-\lang{
-\section{Paradiseo}
-}{
-\section{Paradiseo}
-}
+\section{ParadisEO}
 
 % look at http://paradiseo.gforge.inria.fr/index.php?n=About.Publi
 
-\lang{
-\section{Parallelization on a distributed environment using PEO}
-}{
-\section{Paralellisation dans un environnement distribué en utilisant PEO}
-}
+\section{\lang{Parallelization on a distributed environment using PEO}{Paraléllisation dans un environnement distribué en utilisant PEO}}
 
+\section{\lang{An hybrid algorithm in estimating of distribution parameters and simulated annealing for continuous optimization}{Hybride d'algorithme à estimation de distribution et de recuit simulé pour l'optimisation continue}}
 
-\lang{
-\section{An hybrid algorithm in estimating of distribution parameters and simulated annealing for continuous optimization}
-}{
-\section{Hybride d'algorithme à estimation de distribution et de recuit simulé pour l'optimisation continue}
-}
-
-\lang{
-\section{...}
-}{
 \section{Parallélisation de la recherche de fronts de performances pour le paramétrage de métaheuristiques}
-}
 
-\lang{
-\section{Parallel Divide-and-Evolve: Experiments with OpenMP on a Multicore Machine}
-}{
-\section{Divide-and-Evolve en parallèle: expérimentation avec OpenMP dans un environnement multi-coeurs}
-}
-
+\section{\lang{Parallel Divide-and-Evolve: Experiments with OpenMP on a Multicore Machine}{Divide-and-Evolve en parallèle: expérimentation avec OpenMP dans un environnement multi-coeurs}}
 
 \section{Parallelization and Scalability}
 
@@ -135,8 +101,6 @@ In order to speedup the parallelization, we have to be care about the scalabilit
 \paragraph{Incremental memory allocation issue}
 
 As we are working in a parallel version of EO as well as minimizing the time consuming, we have found this issue doing incremental allocations in the variation operator's classes.
-
-\paragraph{
 
 \section{Conclusion}
 
