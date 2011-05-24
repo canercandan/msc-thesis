@@ -90,6 +90,18 @@ Since the emergence of processors, the manufactors have produced more and more f
 
 \section{Parallelization of an evolutionary algorithm}
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.5]{images/evaluation_box}
+  %\caption{The steps of an evolutionary algorithm}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.5]{images/parallelized_evaluation_boxes}
+  %\caption{The steps of an evolutionary algorithm}
+\end{figure}
+
 \section{Parallelization and Scalability}
 
 In order to speed the parallelization up, we had to be careful about the scalability of the framework. Indeed for small population sizes the work (efficiency) of the processors is roughly closed to 100\% but for sizes bigger than 100 individuals we observe a speed down of this processors' work. Usually, and using a data parallelization paradigm, the reason why the framework is not scalable is due to memory allocations which are not under control. One solution which solves this issue was to remove or replace all calls to the functions affecting the memory capacity of the main parents and offspring vectors (swap, ...).
