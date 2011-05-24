@@ -68,7 +68,7 @@
 
 \section{\lang{High performance computing}{Calcul haute performance}}
 
-Since the emergence of processors, the manufactors produce more and more faster architectures in increasing the clock rate. Thereby the performances of programs are enhanced without needing any modifications. Defined by the Moore law, this method had to normaly persist to 2015. But in increasing the clock rate it also increases the head disspation. In 2004 was the year of an important failover. We were progressively switching to processors with several computational cores and the developers were facing a new conception way: close-to-metal.
+Since the emergence of processors, the manufactors have produced more and more fast architectures by increasing the clock rate. Thereby the performances of programs are enhanced without needing any modifications. Defined by the Moore law, this method had to normaly persist to 2015. But by growing the clock rate it also increases the head disspation. 2004 was the year of an important failover. We were progressively switching to processors with several computational cores and the developers were facing a new conception way: close-to-metal.
 
 
 \section{\lang{Evolving Objects Framework}{Le framework EO}}
@@ -93,7 +93,7 @@ Since the emergence of processors, the manufactors produce more and more faster 
 
 \section{Parallelization and Scalability}
 
-In order to speedup the parallelization, we had to be care about the scalability of the framework. Indeed for small population sizes the work (efficiency) of the processors is roughly closed to 100\% but for sizes bigger than 100 individuals we observe a speed down of this processors' work. Usually, and using a data parallelization paradigm, the reason why the framework is not scalable is due to memory allocations not under control. One solution which solves this issue was to remove or replace all calls to the functions affecting the memory capacity of the main parents and offspring vectors (swap, ...).
+In order to speed the parallelization up, we had to be careful about the scalability of the framework. Indeed for small population sizes the work (efficiency) of the processors is roughly closed to 100\% but for sizes bigger than 100 individuals we observe a speed down of this processors' work. Usually, and using a data parallelization paradigm, the reason why the framework is not scalable is due to memory allocations which are not under control. One solution which solves this issue was to remove or replace all calls to the functions affecting the memory capacity of the main parents and offspring vectors (swap, ...).
 
 
 
