@@ -8,6 +8,8 @@
 % Authors:
 % Caner Candan <caner@candan.fr>, http://caner.candan.fr
 
+% Préparer le plan du rapport à la manière d'une histoire en commençant par les travaux d’ingénierie en se dirigeant vers la recherche (introduction EO, parallélisation (travail d’ingénieur, travail de recherche), paramétrage BOPO (ingénierie: paramétrage à chaud ... utiliser des explications anecdotiques, recherche: voir publication ROADEF, definition: paramétrer, comparer, comprendre (front de pareto, de performance)), EDA-SA (ingénierie: Design from scratch de EDO, recherche: papier ROADEF)
+
 % TODO
 % faire un nouveau plan
 % pour fin mai: comparaison et description des expériences et description des scripts
@@ -76,7 +78,7 @@
 
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.5]{images/evolutionary_algorithm_scheme}
+  \includegraphics[scale=0.3]{images/evolutionary_algorithm_scheme}
   \caption{The steps of an evolutionary algorithm}
 \end{figure}
 
@@ -88,15 +90,7 @@
 
 \paragraph{\lang{High performance computing}{Calcul haute performance}}
 
-Since the emergence of processors, the manufactors have produced more and more fast architectures by increasing the clock rate. Thereby the performances of programs are enhanced without needing any modifications. Defined by the Moore law, this method had to normaly persist to 2015. But by growing the clock rate it also increases the head disspation. 2004 was the year of an important failover. We were progressively switching to processors with several computational cores and the developers were facing a new conception way: closer to metal.
-
-\section{\lang{Evolving Objects Framework}{Le framework EO}}
-
-\lang{
-  With the help of EO, you can easily design evolutionary algorithms that will find solutions to virtually all kind of hard optimization problems, from continuous to combinatorial ones.
-}{
-  A l'aide du framework EO, il devient possible de concevoir facilement et intuitivement des algorithmes évolutionnistes qui trouveront des solutions à tous les genres de problème virtuel en optimisation difficile allant de l'optimisation continue au combinatoire.
-}
+Since the emergence of processors, the manufactors have produced more and more fast architectures by increasing the clock rate. Thereby the performances of programs are enhanced without needing any modifications. Defined by the Moore law, this method had to normaly persist to 2015. But by growing the clock rate it also increases the heat dissipation. 2004 was the year of an important failover. We were progressively switching to processors with several computational cores and the developers were facing a new conception way: closer to metal.
 
 \section{Parallelization of an evolutionary algorithm}
 
@@ -118,6 +112,12 @@ Since the emergence of processors, the manufactors have produced more and more f
   %\caption{The steps of an evolutionary algorithm}
 \end{figure}
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.5]{images/evaluation_plus_parallelized_boxes}
+  %\caption{The steps of an evolutionary algorithm}
+\end{figure}
+
 \section{Parallelization and Scalability}
 
 In order to speed the parallelization up, we had to be careful about the scalability of the framework. Indeed for small population sizes the work (efficiency) of the processors is roughly closed to 100\% but for sizes bigger than 100 individuals we observe a speed down of this processors' work. Usually, and using a data parallelization paradigm, the reason why the framework is not scalable is due to memory allocations which are not under control. One solution which solves this issue was to remove or replace all calls to the functions affecting the memory capacity of the main parents and offspring vectors (swap, ...).
@@ -126,31 +126,75 @@ In order to speed the parallelization up, we had to be careful about the scalabi
 
 As we are working in a parallel version of EO as well as minimizing the time consuming, we have found this issue doing incremental allocations in the variation operator's classes.
 
+
+\section{\lang{Hybridation of estimation of distribution algorithm and simulated annealing}{Hybridation d'un algorithme d'estimation de distribution et de recuit simulé}}
+
+\lang{%
+  The topics aims to realize a new original algorithm based on metaheuristics. We are using the BBOB\footnote{Black-Box Optimization Benchmarking} benchmark in order to compare our algorithm with some others solving numerical optimization problems. The produced results will be illustrate later.%
+}{%
+  Le sujet vise à concevoir un nouvel algorithme original basé sur les métaheuristiques. Nous utilisons le benchmark BBOB\footnote{Black-Box Optimization Benchmarking}  afin de comparer notre algorithme avec d'autres résolvant des problèmes d'optimisation numérique. Les résultats produits sont présentés plus loin.%
+}
+
+
+\lang{%
+  First of all, the metaheuristics may be considered in 3 distinguished sampling classes as follow: explicit, implicit and direct cases. Our algorithm uses two of them that I am presenting below.%
+}{%
+  Les métaheuristiques peuvent être différencier par 3 classes d'échantillonnage, le cas explicite, implicite et direct. Nous utilisons pour notre algorithme 2 classes que je vais vous présenter.%
+}
+
+
+\lang{%
+  As an explicit sampling class, the estimation of distribution algorithm is used. It lets the user the choice of the distribution to use. The operators of EDA are the estimation, selection and sampling. The figure \ref{fig:eda_mono_variant_gauss_iteration} illustrates the works of the algorithm. As the optimum is the red point, at each iteration the gausian is contracting itself and converging to a solution closed to the optimum.%
+}{%
+  Dans le cas d'un échantillonnage explicite, nous utiliserons l'algorithme à estimation de distribution qui consiste à laisser à l'utilisateur le choix de la distribution à utiliser. Les opérateurs des EDA sont l'estimation, la sélection et l'échantillonnage. Nous avons un exemple présentant le fonctionnement de l'algorithme. En admétant que l'optimum est le point rouge on aperçoit qu'à chaque itération la gaussienne se rétressit et converge vers une solution proche de l'optimum.%
+}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.25]{images/eda_mono_variant_gauss_iteration}
+  \caption{Illustration of the works of the estimation of distribution algorithm.}
+  \label{fig:eda_mono_variant_gauss_iteration}
+\end{figure}
+
+
+\lang{%
+  {\bf Conception} and implementation of the EDO framework, for the design of estimation of distribution algorithms. Used along with ParadisEO-MO to implement an original hybridation of multi-variate gaussian EDA with simulated annealing. Available at \url{http://eodev.sf.net} (Published at ROADEF 2011)
+}{%
+  {\bf Conception} et implémentation du framework EDO, pour le design d'algorithmes à estimation de distribution. Utilisé avec ParadisEO-MO pour implémenter une hybridation originale de gaussienne multi-variante EDA avec un recuit simulé. Disponible sur le web: \url{http://eodev.sf.net} (Publication à ROADEF 2011)
+}%
+
+
 \bibliographystyle{abbrv}
+
 \begin{thebibliography}{10}
 
 \bibitem{dae:gecco2011}
-C. Candan, J. Dr{\'e}o, P.~Sav\'eant and V.~Vidal.
-\newblock {Parallel Divide-and-Evolve: Experiments with OpenMP on a Multicore Machine}.
-\newblock In {\em $21^{st}$ Genetic and Evolutionary Computation Conference (GECCO'11)}, pages XXX--XXX. ACM Press, 2011.
+  C. Candan, J. Dr{\'e}o, P.~Sav\'eant and V.~Vidal.
+  \newblock {Parallel Divide-and-Evolve: Experiments with OpenMP on a Multicore Machine}.
+  \newblock In {\em $21^{st}$ Genetic and Evolutionary Computation Conference (GECCO'11)}, pages XXX--XXX. ACM Press, 2011.
 
 \bibitem{edasa:roadef2011}
-J. Dr{\'e}o, C. Candan.
-\newblock {Hybride d'algorithme à estimation de distribution et de recuit simulé pour l'optimisation continue}.
-\newblock In {\em $12^{th}$ Société française de Recherche Opérationnelle et d’Aide à la Décision (ROADEF'11)}, 2011.
+  J. Dr{\'e}o, C. Candan.
+  \newblock {Hybride d'algorithme à estimation de distribution et de recuit simulé pour l'optimisation continue}.
+  \newblock In {\em $12^{th}$ Société française de Recherche Opérationnelle et d’Aide à la Décision (ROADEF'11)}, 2011.
 
 \end{thebibliography}
 
 \end{document}
 
+% \section{\lang{Evolving Objects Framework}{Le framework EO}}
+
+% \lang{
+%   With the help of EO, you can easily design evolutionary algorithms that will find solutions to virtually all kind of hard optimization problems, from continuous to combinatorial ones.
+% }{
+%   A l'aide du framework EO, il devient possible de concevoir facilement et intuitivement des algorithmes évolutionnistes qui trouveront des solutions à tous les genres de problème virtuel en optimisation difficile allant de l'optimisation continue au combinatoire.
+% }
 
 % \section{ParadisEO}
 
 % % look at http://paradiseo.gforge.inria.fr/index.php?n=About.Publi
 
 % \section{\lang{Parallelization on a distributed environment using PEO}{Paraléllisation dans un environnement distribué en utilisant PEO}}
-
-% \section{\lang{An hybrid algorithm in estimating of distribution parameters and simulated annealing for continuous optimization}{Hybride d'algorithme à estimation de distribution et de recuit simulé pour l'optimisation continue}}
 
 % \section{Parallélisation de la recherche de fronts de performances pour le paramétrage de métaheuristiques}
 
